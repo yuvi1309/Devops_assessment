@@ -34,6 +34,7 @@ pipeline {
 
         stage('Test') {
             steps {
+                dir('C://ProgramData//Jenkins//.jenkins//workspace//jenkins_multibranch_master//exercise-bt-conditionalstatements-ifelse')
                 bat 'mvn test'
             }
         }
