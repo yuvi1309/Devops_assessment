@@ -25,8 +25,10 @@ pipeline {
  
         stage('Build') {
             steps {
-                bat 'cd exercise-bt-conditionalstatements-ifelse'
+                //bat 'cd exercise-bt-conditionalstatements-ifelse'
+                dir('//exercise-bt-conditionalstatements-ifelse'){
                 bat 'mvn -B -DskipTests clean package'
+                }
             }
         }
 
@@ -38,9 +40,9 @@ pipeline {
     }
  
     post {
-        //always {
-            //cleanWs()
-        //}
+        always {
+            cleanWs()
+        }
  
         failure {
             script {
