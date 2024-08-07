@@ -26,7 +26,7 @@ pipeline {
         stage('Build') {
             steps {
                 //bat 'cd exercise-bt-conditionalstatements-ifelse'
-                dir('//exercise-bt-conditionalstatements-ifelse'){
+                dir('C://ProgramData//Jenkins//.jenkins//workspace//jenkins_multibranch_master//exercise-bt-conditionalstatements-ifelse'){
                 bat 'mvn -B -DskipTests clean package'
                 }
             }
