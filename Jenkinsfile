@@ -39,10 +39,18 @@ pipeline {
             }
         }
     }
+    stage('SonarQube Analysis'){
+        steps{
+            withSonarQubeEnv('sonarQube'){
+                sh 'mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${548393a08d4cfd95df1d64b8ce066c2cc8117541} -Dsonar.password=${548393a08d4cfd95df1d64b8ce066c2cc8117541}'
+            }
+        }
+    }
  
     post {
         always {
             cleanWs()
+            sonarQualityGate()
         }
  
         failure {
