@@ -18,7 +18,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: "${BRANCH_NAME}", url: "${GIT_REPO}"
+                //git branch: "${BRANCH_NAME}", url: "${GIT_REPO}"
+                bat 'git clone https://github.com/yuva-shree-a/Devops_assessment'
             }
         }
  
