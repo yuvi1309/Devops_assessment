@@ -24,7 +24,7 @@ pipeline {
  
         stage('Build') {
             steps {
-                bat 'cd '
+                bat 'cd exercise-bt-conditionalstatements-ifelse'
                 bat 'mvn -B -DskipTests clean package'
             }
         }
