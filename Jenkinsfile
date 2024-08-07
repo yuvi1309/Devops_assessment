@@ -38,7 +38,7 @@ pipeline {
                 bat 'mvn test'}
             }
         }
-    }
+    
     stage('SonarQube Analysis'){
         steps{
             withSonarQubeEnv('sonarQube'){
@@ -46,6 +46,8 @@ pipeline {
             }
         }
     }
+    }
+
  
     post {
         always {
