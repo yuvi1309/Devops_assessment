@@ -10,7 +10,7 @@ pipeline {
     }
 
     environment {
-        GIT_REPO = 'https://github.com/yuva-shree-a/Devops_assessment'
+        GIT_REPO = 'https://github.com/yuvi1309/Devops_assessment.git'
         DEVELOPERS_EMAIL = 'athiyuva2513@gmail.com'
         BRANCH_NAME = 'master' 
     }
@@ -19,7 +19,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 //git branch: "${BRANCH_NAME}", url: "${GIT_REPO}"
-                bat 'git clone https://github.com/yuva-shree-a/Devops_assessment'
+                bat 'git clone https://github.com/yuvi1309/Devops_assessment.git'
             }
         }
  
