@@ -58,11 +58,11 @@ pipeline {
  
         failure {
             script {
-                 if (env.BRANCH_NAME == 'master') {
-                    emailext subject: "Build failed in Jenkins: ${currentBuild.fullDisplayName}",
-                             body: "Something is wrong with ${env.BRANCH_NAME} branch.\n\nCheck console output at ${env.BUILD_URL} to view the results.",
-                             to: "${env.DEVELOPERS_EMAIL}"
-                }
+                emailext(
+                    subject: "Build failed in Jenkins: ${currentBuild.fullDisplayName}",
+                    body: "Something is wrong with ${env.BRANCH_NAME} branch.\n\nCheck console output at ${env.BUILD_URL} to view the results.",
+                    to: "${env.DEVELOPERS_EMAIL}")
+                
             }
         }
     }
