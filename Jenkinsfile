@@ -43,7 +43,7 @@ pipeline {
     stage('SonarQube Analysis'){
         steps{
             withSonarQubeEnv('sonarCloud'){
-                 bat 'mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io  -Dsonar.login=<yuva-shree-a> -Dsonar.password=${f49edfb454a8ef3be6d52657686348d9cbbfb119} -Dsonar.projectKey=<yuva-shree-a_Devops_assessment> '
+                 sh 'mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io  -Dsonar.login=<yuva-shree-a> -Dsonar.password=${f49edfb454a8ef3be6d52657686348d9cbbfb119} -Dsonar.projectKey=<yuva-shree-a_Devops_assessment> '
             //Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
             }
         }
